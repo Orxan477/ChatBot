@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .ull{
+        display: none;
+    }
+    .ull li{
+        padding: 10px;
+        border: 1px solid black;
+        cursor: pointer;
+    }
+    .cav{
+        margin:10px;
+    }
+    .intro{
+        text-align: center;
+    }
+</style>
+<body>
+    <div  class="intro">
+        <h1>ChatBot</h1>
+    <form method="post" id="hello">
+        <input type="text" class="location"></input> <button type="submit">Göndər</button>
+    </form>
+    </div>
+    <ul class="ansver">
+        
+    </ul>
+
+    <ul class="ull">
+        <li class="salam" value="1">Necesen?</li>
+        <li class="salam" value="2">Salamatsann?</li>
+    </ul>
+
+
+    <script>
+        var myArray = {1: "pis", 2: "yaxsi"};
+        var ans=document.querySelector('.ansver');
+
+        var lis=document.querySelectorAll(".salam");
+        lis.forEach(elm => {
+            elm.addEventListener('click',function(){
+                ans.innerHTML += '<li class="cav">Insan:' + elm.innerHTML + '</li>';
+                ans.innerHTML += '<li class="cav"> Bot: ' + myArray[elm.value] + '</li>';
+            })
+        });
+
+
+        var forum=document.getElementById("hello");
+        var ull=orum=document.querySelector(".ull");
+        var loc=document.querySelector('.location');
+
+        forum.addEventListener('submit',function(e){
+            e.preventDefault();
+            ans.innerHTML += '<li class="cav">Insan: ' + loc.value + '</li>';
+            ans.innerHTML += '<li class="cav">Bot: Salam. Buyurun.</li>';
+            forum.style.display="none";
+            ull.style.display="inline";
+        })
+
+        
+    </script>
+</body>
+</html>
